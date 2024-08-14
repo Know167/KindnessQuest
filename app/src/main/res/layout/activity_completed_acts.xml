@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tvCompletedAct"
+    <!-- Title TextView -->
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Completed act will appear here"
-        android:textSize="18sp"
-        android:textAlignment="center"
-        android:padding="16dp" />
+        android:text="Completed Acts"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnBackground"
+        android:layout_marginBottom="16dp"/>
 
+    <!-- RecyclerView to display the list of completed acts -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCompletedActs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <!-- Placeholder TextView when the list is empty -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEmptyListPlaceholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No completed acts yet."
+        android:textSize="16sp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="?attr/colorOnBackground"/>
 </LinearLayout>

@@ -1,39 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
+    android:layout_margin="16dp"
     android:padding="16dp"
-    android:background="@color/cardview_dark_background">
+    android:layout_gravity="center"
+    android:background="?attr/colorSurface"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="8dp">
 
-    <TextView
-        android:id="@+id/tvAct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Your random act will appear here"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textColor="@color/cardview_light_background"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/btnNewAct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Act"/>
+        <!-- TextView for displaying the random dare -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvAct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your random act will appear here"
+            android:textAlignment="center"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp"/>
 
-    <Button
-        android:id="@+id/btnMarkComplete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mark as Complete"
-        android:layout_marginTop="16dp" />
+        <!-- Button for generating a new random act -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNewAct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generate New Act"
+            android:layout_gravity="center"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="?attr/colorOnPrimary"/>
 
-    <Button
-        android:id="@+id/btnViewCompletedActs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View Completed Acts"
-        android:layout_marginTop="16dp" />
-</LinearLayout>
+        <!-- Spacer to push content below towards the bottom -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <!-- Button for marking the act as complete -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMarkComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mark as Complete"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="?attr/colorOnPrimary"/>
+
+        <!-- Button for viewing completed acts -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnViewCompletedActs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Completed Acts"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="?attr/colorOnPrimary"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
