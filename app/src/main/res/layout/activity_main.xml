@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@color/cardview_dark_background">
+
+    <TextView
+        android:id="@+id/tvAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Your random act will appear here"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="@color/cardview_light_background"/>
+
+    <Button
+        android:id="@+id/btnNewAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Act"/>
+
+    <Button
+        android:id="@+id/btnMarkComplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mark as Complete"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnViewCompletedActs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Completed Acts"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
